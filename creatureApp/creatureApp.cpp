@@ -4,6 +4,7 @@
 #include "Creature.h"
 #include "HumanBeing.h"
 #include "Animal.h"
+#include "Reptile.h"
 #include <iostream>
 using namespace std;
 
@@ -32,6 +33,17 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	cout << endl;
 	delete pAnimal;
+
+	Reptile* pReptile = new Reptile(1, 30, "Bartagame", 4);
+	//cout << "Gewicht: " << pReptile->getWeight() << endl;
+	cout << endl;
+	pReptile->showAttributes();
+
+	cout << endl;
+	pReptile->moveOn();
+
+	cout << endl;
+	delete pReptile;
 
 	return 0;
 }
