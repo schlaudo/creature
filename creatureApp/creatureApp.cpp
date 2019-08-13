@@ -5,6 +5,7 @@
 #include "HumanBeing.h"
 #include "Animal.h"
 #include "Reptile.h"
+#include "Mammal.h"
 #include <iostream>
 using namespace std;
 
@@ -15,6 +16,7 @@ void showMenu()
 	cout << "Mann ............. 1" << endl;
 	cout << "Frau ............. 2" << endl;
 	cout << "Bartagame ........ 3" << endl;
+	cout << "Robbe ............ 4" << endl;
 	cout << "Programmende ..... 9" << endl << endl;
 	cout << "Ihre Wahl: ";
 }
@@ -23,6 +25,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	HumanBeing*	pHumanBeing;
 	Reptile*	pReptile;
+	Mammal*		pMammal;
 	int			selection;
 
 	do
@@ -45,6 +48,9 @@ int _tmain(int argc, _TCHAR* argv[])
 		case 3:
 			pReptile = new Reptile(1, 30, "Bartagame", 4);
 			break;
+		case 4:
+			pMammal = new Mammal(250, 200, "Robbe", 0);
+			break;
 		case 9:
 			cout << endl << "Programmende!" << endl;
 			break;
@@ -58,6 +64,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		//100 pages later on ...
 		if (pHumanBeing != NULL)
 			pHumanBeing->showAttributes();
+		else if (pMammal != NULL)
+			pMammal->showAttributes();
 		else if (pReptile != NULL)
 			pReptile->showAttributes();
 
@@ -66,6 +74,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		//150 pages later ...
 		if (pHumanBeing != NULL)
 			pHumanBeing->moveOn();
+		else if (pMammal != NULL)
+			pMammal->moveOn();
 		else if (pReptile != NULL)
 			pReptile->moveOn();
 
@@ -74,6 +84,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		//don't forget to delete the objects
 		if (pHumanBeing != NULL)
 			delete pHumanBeing;
+		else if (pMammal != NULL)
+			delete pMammal;
 		else if (pReptile != NULL)
 			delete pReptile;
 
