@@ -39,5 +39,6 @@
 *.vcxproj
 *.vcxproj.filters
 *.txt
+*.ini
 **/Debug
 
