@@ -6,6 +6,7 @@
 #include "Animal.h"
 #include "Reptile.h"
 #include "Mammal.h"
+#include "Amphibian.h"
 #include <iostream>
 using namespace std;
 
@@ -17,6 +18,7 @@ void showMenu()
 	cout << "Frau ............. 2" << endl;
 	cout << "Bartagame ........ 3" << endl;
 	cout << "Robbe ............ 4" << endl;
+	cout << "Frosch ........... 5" << endl;
 	cout << "Programmende ..... 9" << endl << endl;
 	cout << "Ihre Wahl: ";
 }
@@ -26,6 +28,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	HumanBeing*	pHumanBeing;
 	Reptile*	pReptile;
 	Mammal*		pMammal;
+	Amphibian*	pAmphibian;
 	int			selection;
 
 	do
@@ -51,6 +54,9 @@ int _tmain(int argc, _TCHAR* argv[])
 		case 4:
 			pMammal = new Mammal(250, 200, "Robbe", 0);
 			break;
+		case 5:
+			pAmphibian = new Amphibian(1, 12, "Frosch", 4);
+			break;
 		case 9:
 			cout << endl << "Programmende!" << endl;
 			break;
@@ -68,6 +74,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			pMammal->showAttributes();
 		else if (pReptile != NULL)
 			pReptile->showAttributes();
+		else if (pAmphibian != NULL)
+			pAmphibian->showAttributes();
 
 		cout << endl;
 		//... again there is a lot of code,
@@ -78,6 +86,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			pMammal->moveOn();
 		else if (pReptile != NULL)
 			pReptile->moveOn();
+		else if (pAmphibian != NULL)
+			pAmphibian->moveOn();
 
 		cout << endl;
 		//... 50 pages later ...
@@ -88,6 +98,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			delete pMammal;
 		else if (pReptile != NULL)
 			delete pReptile;
+		else if (pAmphibian != NULL)
+			delete pAmphibian;
 
 	} while (selection != 9);
 
