@@ -1,9 +1,9 @@
 // creatureApp.cpp : Definiert den Einstiegspunkt für die Konsolenanwendung.
 //
-
 #include "stdafx.h"
 #include "Creature.h"
 #include "HumanBeing.h"
+#include "Animal.h"
 #include <iostream>
 using namespace std;
 
@@ -21,6 +21,17 @@ int _tmain(int argc, _TCHAR* argv[])
 	delete pHuman;
 
 	cout << endl;
+
+	Animal* pAnimal = new Animal(21, 45, "Hund", 4);
+	//cout << "Gewicht: " << pAnimal->getWeight() << endl;
+	cout << endl;
+	pAnimal->showAttributes();
+
+	cout << endl;
+	pAnimal->moveOn();
+
+	cout << endl;
+	delete pAnimal;
 
 	return 0;
 }
